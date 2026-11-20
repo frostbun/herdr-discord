@@ -1,0 +1,195 @@
+{
+  "id": "root",
+  "type": "row",
+  "titlebar": "none",
+  "traffic_lights": [
+    12,
+    16
+  ],
+  "background": "canvas",
+  "terminal_padding": [
+    16,
+    12
+  ],
+  "preview": "layouts/discord.svg",
+  "divider": {
+    "width": 1,
+    "color": "border"
+  },
+  "children": [
+    {
+      "id": "guilds",
+      "type": "block",
+      "size": {
+        "px": 76
+      },
+      "min": 76,
+      "max": 76,
+      "background": "chrome",
+      "content": {
+        "mod": "discord-guilds"
+      }
+    },
+    {
+      "id": "channels",
+      "type": "column",
+      "size": {
+        "px": 236
+      },
+      "min": 180,
+      "max": 360,
+      "background": "surface",
+      "divider": {
+        "width": 1,
+        "color": "border"
+      },
+      "children": [
+        {
+          "id": "guild-head",
+          "type": "block",
+          "size": {
+            "px": 54
+          },
+          "window_drag": true,
+          "content": {
+            "mod": "discord-channels",
+            "props": {
+              "guild": true
+            }
+          }
+        },
+        {
+          "id": "channel-list",
+          "type": "block",
+          "content": {
+            "mod": "discord-channels"
+          }
+        },
+        {
+          "id": "person",
+          "type": "block",
+          "size": {
+            "px": 56
+          },
+          "content": {
+            "mod": "discord-channels",
+            "props": {
+              "person": true
+            }
+          },
+          "max": 56,
+          "min": 56
+        }
+      ]
+    },
+    {
+      "id": "work",
+      "type": "column",
+      "background": "background",
+      "children": [
+        {
+          "id": "channel-head",
+          "type": "block",
+          "size": {
+            "px": 48
+          },
+          "window_drag": true,
+          "content": {
+            "mod": "discord-threads",
+            "props": {
+              "channelHead": true
+            }
+          }
+        },
+        {
+          "id": "threads",
+          "type": "stack",
+          "active": "pane-area",
+          "children": [
+            {
+              "id": "pane-area",
+              "type": "block",
+              "content": {
+                "tab": "active",
+                "pane": {
+                  "gap": 6,
+                  "radius": 4,
+                  "background": "background",
+                  "border": {
+                    "width": 0,
+                    "color": "background"
+                  },
+                  "focus": {
+                    "width": 0,
+                    "color": "background"
+                  },
+                  "lone": false
+                }
+              }
+            },
+            {
+              "id": "no-space",
+              "type": "block",
+              "content": {
+                "mod": "discord-no-space"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "side",
+      "type": "column",
+      "size": {
+        "px": 280
+      },
+      "min": 180,
+      "max": 1200,
+      "background": "surface",
+      "divider": {
+        "width": 1,
+        "color": "border"
+      },
+      "children": [
+        {
+          "id": "side-head",
+          "type": "block",
+          "size": {
+            "px": 38
+          },
+          "content": {
+            "mod": "discord-side",
+            "props": {
+              "head": true
+            }
+          },
+          "min": 38,
+          "max": 38
+        },
+        {
+          "id": "side-body",
+          "type": "stack",
+          "active": "files",
+          "children": [
+            {
+              "id": "files",
+              "type": "block",
+              "content": {
+                "mod": "files"
+              }
+            },
+            {
+              "id": "changes",
+              "type": "block",
+              "content": {
+                "mod": "changes"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "theme": "discord"
+}
